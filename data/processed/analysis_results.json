@@ -1,0 +1,161 @@
+{
+  "basic_stats": {
+    "num_packages": 1553,
+    "total_dependencies": 6307,
+    "density": 0.0026150495333585703,
+    "avg_dependencies_per_package": 4.061171925305859,
+    "max_dependencies": 68,
+    "packages_with_no_dependencies": 100
+  },
+  "spectral": {
+    "algebraic_connectivity": -1.4784460235742997e-18,
+    "spectral_gap": 0.0,
+    "top_10_eigenvalues": [
+      36.40360020313381,
+      39.36930029379087,
+      40.75842223163914,
+      42.303809788773115,
+      43.67078934894925,
+      44.13659890049306,
+      46.074581191303686,
+      57.638211929888264,
+      66.31723823230497,
+      68.20070657616607
+    ]
+  },
+  "pagerank": {
+    "top_20_packages": [
+      [
+        "glibc",
+        0.0841648318669806
+      ],
+      [
+        "tzdata",
+        0.025231185574568275
+      ],
+      [
+        "filesystem",
+        0.023979387094665693
+      ],
+      [
+        "linux-api-headers",
+        0.023973373142981157
+      ],
+      [
+        "iana-etc",
+        0.020479212957469354
+      ],
+      [
+        "ghc-libs",
+        0.016445407205848698
+      ],
+      [
+        "python",
+        0.015151307905977816
+      ],
+      [
+        "gcc-libs",
+        0.014762017294451198
+      ],
+      [
+        "zlib",
+        0.005933401772255229
+      ],
+      [
+        "libffi",
+        0.005711896829807261
+      ],
+      [
+        "perl",
+        0.004247746212324086
+      ],
+      [
+        "gmp",
+        0.004122442246953553
+      ],
+      [
+        "numactl",
+        0.003636269385214343
+      ],
+      [
+        "glib2",
+        0.0034033252519537387
+      ],
+      [
+        "readline",
+        0.0031189198738542662
+      ],
+      [
+        "openssl",
+        0.003056934053249892
+      ],
+      [
+        "ncurses",
+        0.0028409289096039737
+      ],
+      [
+        "libxcrypt",
+        0.002804105449722867
+      ],
+      [
+        "bash",
+        0.0026876059961803097
+      ],
+      [
+        "gdbm",
+        0.002475655999291054
+      ]
+    ]
+  },
+  "clustering": {
+    "avg_clustering_coefficient": 0.10702105106576427,
+    "max_clustering": 1.0
+  },
+  "strongly_connected_components": {
+    "num_sccs": 1544,
+    "largest_scc_size": 3,
+    "top_10_scc_sizes": [
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1
+    ]
+  },
+  "dependency_depths": {
+    "max_dependency_depth": 16,
+    "avg_dependency_depth": 5.313586606567933
+  },
+  "matrix_decomposition": {
+    "rank": 775,
+    "effective_rank": 750,
+    "condition_number": 4.3986649865698613e+30,
+    "top_10_singular_values": [
+      31.665930715615154,
+      15.986840367112674,
+      14.462995195906876,
+      14.2481159496575,
+      13.900218770444587,
+      12.012460379951618,
+      11.053860644554202,
+      9.436107619735077,
+      9.12436704157475,
+      8.729484714436955
+    ]
+  },
+  "compatibility": {
+    "avg_compatibility": 0.9989535655601253,
+    "min_compatibility": 0.5,
+    "reachable_pairs": 6307
+  },
+  "overlap": {
+    "avg_overlap": 0.0680847916795982,
+    "max_overlap": 1.0,
+    "highly_overlapping_pairs": 20846
+  }
+}

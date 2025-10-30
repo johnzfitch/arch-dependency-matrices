@@ -1,0 +1,987 @@
+{
+  "explicit_conflicts": {
+    "acl": [
+      "xfsacl"
+    ],
+    "aircrack-ng": [
+      "aircrack-ng-scripts"
+    ],
+    "at-spi2-core": [
+      "at-spi2-atk<=2.38.0-2",
+      "atk<=2.38.0-2"
+    ],
+    "attr": [
+      "xfsattr"
+    ],
+    "bind": [
+      "bind-tools",
+      "dnsutils"
+    ],
+    "binutils": [
+      "binutils-multilib"
+    ],
+    "btrfs-progs": [
+      "btrfs-progs-unstable"
+    ],
+    "ca-certificates": [
+      "ca-certificates-cacert<=20140824-4"
+    ],
+    "ca-certificates-utils": [
+      "ca-certificates-java"
+    ],
+    "clang": [
+      "clang-analyzer",
+      "clang-tools-extra"
+    ],
+    "cryptsetup": [
+      "mkinitcpio<38-1"
+    ],
+    "curl": [
+      "wcurl"
+    ],
+    "dbus": [
+      "libdbus"
+    ],
+    "dbus-broker-units": [
+      "dbus-daemon-units"
+    ],
+    "dotnet-runtime": [
+      "dotnet-runtime-9.0"
+    ],
+    "elephant": [
+      "elephant"
+    ],
+    "elephant-bluetooth": [
+      "elephant-bluetooth"
+    ],
+    "elephant-calc": [
+      "elephant-calc"
+    ],
+    "elephant-clipboard": [
+      "elephant-clipboard"
+    ],
+    "elephant-desktopapplications": [
+      "elephant-desktopapplications"
+    ],
+    "elephant-files": [
+      "elephant-files"
+    ],
+    "elephant-menus": [
+      "elephant-menus"
+    ],
+    "elephant-providerlist": [
+      "elephant-providerlist"
+    ],
+    "elephant-runner": [
+      "elephant-runner"
+    ],
+    "elephant-symbols": [
+      "elephant-symbols"
+    ],
+    "elephant-todo": [
+      "elephant-todo"
+    ],
+    "elephant-unicode": [
+      "elephant-unicode"
+    ],
+    "elephant-websearch": [
+      "elephant-websearch"
+    ],
+    "eza": [
+      "exa"
+    ],
+    "fcitx5": [
+      "fcitx"
+    ],
+    "fontconfig": [
+      "fontconfig-docs"
+    ],
+    "freeglut": [
+      "glut"
+    ],
+    "fuse2": [
+      "fuse"
+    ],
+    "ghc-libs": [
+      "haskell-ghci"
+    ],
+    "ghostscript": [
+      "ghostpcl",
+      "ghostxps"
+    ],
+    "gnome-themes-extra": [
+      "gnome-themes-standard"
+    ],
+    "gpgmepp": [
+      "gpgme<2"
+    ],
+    "gtest": [
+      "gmock"
+    ],
+    "gtk3": [
+      "gtk3-print-backends"
+    ],
+    "imv": [
+      "renameutils"
+    ],
+    "ipsw-bin": [
+      "ipsw"
+    ],
+    "iputils": [
+      "arping",
+      "netkit-base"
+    ],
+    "jdk-openjdk": [
+      "jre-openjdk",
+      "jre-openjdk-headless"
+    ],
+    "kbd": [
+      "vlock"
+    ],
+    "lib32-mesa": [
+      "lib32-libva-mesa-driver<1:24.2.7-1",
+      "lib32-mesa-libgl<17.0.1-2",
+      "lib32-mesa-vdpau<1:24.2.7-1"
+    ],
+    "lib32-nvidia-utils": [
+      "lib32-nvidia-libgl"
+    ],
+    "libblockdev": [
+      "libblockdev-utils"
+    ],
+    "libblockdev-fs": [
+      "libblockdev-tools"
+    ],
+    "libideviceactivation-git": [
+      "libideviceactivation"
+    ],
+    "libimobiledevice-git": [
+      "libimobiledevice"
+    ],
+    "libimobiledevice-glue-git": [
+      "libimobiledevice-glue"
+    ],
+    "libirecovery-git": [
+      "libirecovery"
+    ],
+    "libnghttp2": [
+      "nghttp2<1.20.0-2"
+    ],
+    "libpaper": [
+      "paper"
+    ],
+    "libplist-git": [
+      "libplist"
+    ],
+    "libproxy": [
+      "libproxy-webkit<0.5.0-1"
+    ],
+    "libratbag": [
+      "ratbagd",
+      "liblur"
+    ],
+    "libsigc++": [
+      "libsigc++2.0"
+    ],
+    "libtatsu-git": [
+      "libtatsu"
+    ],
+    "libtool": [
+      "libltdl",
+      "libtool-multilib"
+    ],
+    "libusbmuxd-git": [
+      "libusbmuxd"
+    ],
+    "libva-nvidia-driver": [
+      "libva-vdpau-driver"
+    ],
+    "libverto": [
+      "krb5<1.19.3-2",
+      "libverto-libevent<0.3.2-4"
+    ],
+    "libvpl": [
+      "onevpl"
+    ],
+    "limine-mkinitcpio-hook": [
+      "limine-entry-tool"
+    ],
+    "limine-snapper-sync": [
+      "limine-snapper-sync-git"
+    ],
+    "linux-firmware-broadcom": [
+      "linux-firmware-bnx2x"
+    ],
+    "localsearch": [
+      "tracker3-miners<=3.7.3-2"
+    ],
+    "luit": [
+      "xorg-luit"
+    ],
+    "mailcap": [
+      "mime-types"
+    ],
+    "man-db": [
+      "man"
+    ],
+    "mariadb-libs": [
+      "libmysqlclient",
+      "libmariadbclient",
+      "mariadb-connector-c"
+    ],
+    "mbedtls": [
+      "polarssl"
+    ],
+    "mdadm": [
+      "mkinitcpio<38"
+    ],
+    "mesa": [
+      "libva-mesa-driver<1:24.2.7-1",
+      "mesa-libgl<17.0.1-2",
+      "mesa-vdpau<1:24.2.7-1"
+    ],
+    "mise": [
+      "rtx"
+    ],
+    "mitmproxy": [
+      "pathod"
+    ],
+    "nautilus-python": [
+      "python-nautilus"
+    ],
+    "ntfs-3g": [
+      "ntfsprogs"
+    ],
+    "nvidia-open-dkms": [
+      "nvidia-open",
+      "NVIDIA-MODULE"
+    ],
+    "nvidia-utils": [
+      "nvidia-libgl"
+    ],
+    "ocl-icd": [
+      "libcl"
+    ],
+    "omarchy-nvim": [
+      "omarchy-lazyvim"
+    ],
+    "onetbb": [
+      "intel-tbb",
+      "tbb"
+    ],
+    "opencode": [
+      "opencode-bin"
+    ],
+    "openrazer-daemon-git": [
+      "openrazer-daemon"
+    ],
+    "openrazer-driver-dkms-git": [
+      "openrazer-driver-dkms"
+    ],
+    "openrazer-meta-git": [
+      "openrazer-meta"
+    ],
+    "pandoc-cli": [
+      "pandoc"
+    ],
+    "pinta": [
+      "pinta-git"
+    ],
+    "pipewire-jack": [
+      "jack",
+      "jack2",
+      "pipewire-jack-client"
+    ],
+    "pipewire-pulse": [
+      "pulseaudio"
+    ],
+    "pkgconf": [
+      "pkg-config"
+    ],
+    "plocate": [
+      "mlocate"
+    ],
+    "poppler": [
+      "poppler-qt3<25.10.0",
+      "poppler-qt4<25.10.0"
+    ],
+    "poppler-data": [
+      "poppler<0.10.5"
+    ],
+    "postgresql-libs": [
+      "postgresql-client"
+    ],
+    "procps-ng": [
+      "procps",
+      "sysvinit-tools"
+    ],
+    "purpose": [
+      "purpose5<5.114.0-2"
+    ],
+    "python-argon2-cffi": [
+      "python-argon2_cffi"
+    ],
+    "python-dbus": [
+      "dbus-python",
+      "python-dbus-common"
+    ],
+    "python-gobject": [
+      "pygobject-devel"
+    ],
+    "python-jaraco.classes": [
+      "python-jaraco"
+    ],
+    "python-jaraco.collections": [
+      "python-jaraco"
+    ],
+    "python-jaraco.functools": [
+      "python-jaraco"
+    ],
+    "python-jaraco.text": [
+      "python-jaraco"
+    ],
+    "python-openrazer-git": [
+      "python-openrazer"
+    ],
+    "python-pycryptodome": [
+      "python-crypto"
+    ],
+    "python-pygments": [
+      "pygmentize"
+    ],
+    "python-pyxdg": [
+      "python-xdg"
+    ],
+    "python-terminaltexteffects": [
+      "terminaltexteffects"
+    ],
+    "python-virtualenv": [
+      "virtualenv"
+    ],
+    "qrcodegencpp-cmake": [
+      "qrcodegencpp"
+    ],
+    "qt5-base": [
+      "qtchooser"
+    ],
+    "qt5-declarative": [
+      "qtchooser"
+    ],
+    "ruby": [
+      "ruby-benchmark",
+      "ruby-cgi",
+      "ruby-date",
+      "ruby-delegate",
+      "ruby-did_you_mean",
+      "ruby-digest",
+      "ruby-english",
+      "ruby-etc",
+      "ruby-fcntl",
+      "ruby-fiddle",
+      "ruby-fileutils",
+      "ruby-find",
+      "ruby-forwardable",
+      "ruby-io-console",
+      "ruby-io-nonblock",
+      "ruby-io-wait",
+      "ruby-ipaddr",
+      "ruby-json",
+      "ruby-logger",
+      "ruby-net-http",
+      "ruby-open-uri",
+      "ruby-prism",
+      "ruby-psych",
+      "ruby-reline",
+      "ruby-ruby2_keywords",
+      "ruby-set",
+      "ruby-stringio",
+      "ruby-time",
+      "ruby-tmpdir",
+      "ruby-uri"
+    ],
+    "rust": [
+      "cargo",
+      "rust-docs<1:1.56.1-3",
+      "rustfmt"
+    ],
+    "sdl2-compat": [
+      "sdl2"
+    ],
+    "snapd": [
+      "snap-confine"
+    ],
+    "systemd": [
+      "nss-myhostname",
+      "systemd-tools",
+      "udev"
+    ],
+    "systemd-libs": [
+      "libsystemd"
+    ],
+    "systemd-sysvcompat": [
+      "sysvinit"
+    ],
+    "tidal-hifi-tidaluna": [
+      "tidal-hifi"
+    ],
+    "tinysparql": [
+      "tracker3<=3.7.3-2"
+    ],
+    "totem-pl-parser": [
+      "totem-plparser"
+    ],
+    "ttf-ia-writer": [
+      "ttf-ia-writer-duospace"
+    ],
+    "ttf-jetbrains-mono-nerd": [
+      "nerd-fonts-jetbrains-mono"
+    ],
+    "util-linux": [
+      "rfkill",
+      "hardlink"
+    ],
+    "util-linux-libs": [
+      "libutil-linux"
+    ],
+    "v4l-utils": [
+      "libv4l"
+    ],
+    "walker": [
+      "walker"
+    ],
+    "wayfreeze": [
+      "wayfreeze-git"
+    ],
+    "wireless-regdb": [
+      "crda"
+    ],
+    "wireplumber": [
+      "pipewire-media-session"
+    ],
+    "wireshark-cli": [
+      "wireshark"
+    ],
+    "wireshark-qt": [
+      "wireshark",
+      "wireshark-gtk",
+      "wireshark-common"
+    ],
+    "wxwidgets-common": [
+      "wxgtk-common"
+    ],
+    "x264": [
+      "libx264",
+      "libx264-10bit",
+      "libx264-all"
+    ],
+    "xapp": [
+      "xapps"
+    ],
+    "xf86-input-libinput": [
+      "xorg-server<1.19.0",
+      "X-ABI-XINPUT_VERSION<24",
+      "X-ABI-XINPUT_VERSION>=25"
+    ],
+    "xkeyboard-config": [
+      "xkbdata"
+    ],
+    "xorg-server": [
+      "nvidia-utils<=331.20",
+      "glamor-egl",
+      "xf86-video-modesetting"
+    ],
+    "xorg-xwayland": [
+      "xorg-server-xwayland"
+    ],
+    "zbar": [
+      "zbar-gtk",
+      "zbar-qt",
+      "python-zbar"
+    ]
+  },
+  "circular_dependencies": [
+    [
+      "lib32-keyutils",
+      "lib32-krb5"
+    ],
+    [
+      "lib32-libglvnd",
+      "lib32-mesa"
+    ],
+    [
+      "libglvnd",
+      "mesa"
+    ],
+    [
+      "python-poetry",
+      "python-poetry-plugin-export"
+    ],
+    [
+      "ruby",
+      "rubygems"
+    ]
+  ],
+  "virtual_package_conflicts": {
+    "org.freedesktop.secrets": [
+      "gnome-keyring",
+      "kwallet"
+    ],
+    "lib32-opengl-driver": [
+      "lib32-mesa",
+      "lib32-nvidia-utils"
+    ],
+    "opengl-driver": [
+      "mesa",
+      "nvidia-utils"
+    ],
+    "ttf-font": [
+      "noto-fonts",
+      "ttf-liberation"
+    ],
+    "ttf-font-nerd": [
+      "ttf-cascadia-mono-nerd",
+      "ttf-jetbrains-mono-nerd"
+    ],
+    "xdg-desktop-portal-impl": [
+      "xdg-desktop-portal-gtk",
+      "xdg-desktop-portal-hyprland"
+    ]
+  },
+  "replaces": {
+    "acl": [
+      "xfsacl"
+    ],
+    "aircrack-ng": [
+      "aircrack-ng-scripts"
+    ],
+    "at-spi2-core": [
+      "at-spi2-atk<=2.38.0-2",
+      "atk<=2.38.0-2"
+    ],
+    "attr": [
+      "xfsattr"
+    ],
+    "bind": [
+      "bind-tools",
+      "dnsutils",
+      "host"
+    ],
+    "binutils": [
+      "binutils-multilib"
+    ],
+    "btrfs-progs": [
+      "btrfs-progs-unstable"
+    ],
+    "ca-certificates": [
+      "ca-certificates-cacert<=20140824-4"
+    ],
+    "ca-certificates-utils": [
+      "ca-certificates-java"
+    ],
+    "clang": [
+      "clang-analyzer",
+      "clang-tools-extra"
+    ],
+    "curl": [
+      "wcurl"
+    ],
+    "cython": [
+      "cython-dev"
+    ],
+    "dbus": [
+      "libdbus"
+    ],
+    "eza": [
+      "exa"
+    ],
+    "fontconfig": [
+      "fontconfig-docs<2:2.13.93-1"
+    ],
+    "fuse2": [
+      "fuse"
+    ],
+    "gcc": [
+      "gcc-multilib"
+    ],
+    "gcc-libs": [
+      "gcc-libs-multilib",
+      "libgphobos"
+    ],
+    "ghc-libs": [
+      "haskell-array",
+      "haskell-base",
+      "haskell-binary",
+      "haskell-bytestring",
+      "haskell-cabal",
+      "haskell-cabal-syntax",
+      "haskell-containers",
+      "haskell-deepseq",
+      "haskell-directory",
+      "haskell-exceptions",
+      "haskell-filepath",
+      "haskell-ghc-bignum",
+      "haskell-ghc-boot",
+      "haskell-ghc-boot-th",
+      "haskell-ghc-compact",
+      "haskell-ghc-heap",
+      "haskell-ghc-prim",
+      "haskell-haskeline",
+      "haskell-hpc",
+      "haskell-integer-gmp",
+      "haskell-libiserv",
+      "haskell-mtl",
+      "haskell-parsec",
+      "haskell-pretty",
+      "haskell-process",
+      "haskell-stm",
+      "haskell-template-haskell",
+      "haskell-terminfo",
+      "haskell-text",
+      "haskell-time",
+      "haskell-transformers",
+      "haskell-unix",
+      "haskell-xhtml",
+      "haskell-ghc-pkg"
+    ],
+    "ghostscript": [
+      "ghostpcl",
+      "ghostxps"
+    ],
+    "gnome-themes-extra": [
+      "gnome-themes-standard<3.27.92"
+    ],
+    "go": [
+      "go-pie"
+    ],
+    "gtest": [
+      "gmock"
+    ],
+    "gtk3": [
+      "gtk3-print-backends<=3.22.26-1"
+    ],
+    "gvfs": [
+      "gvfs-afp",
+      "gvfs-obexftp"
+    ],
+    "hwdata": [
+      "hwids"
+    ],
+    "imagemagick": [
+      "imagemagick-doc"
+    ],
+    "iputils": [
+      "netkit-base"
+    ],
+    "kbd": [
+      "vlock"
+    ],
+    "lib32-mesa": [
+      "lib32-libva-mesa-driver<1:24.2.7-1",
+      "lib32-mesa-libgl<17.0.1-2",
+      "lib32-mesa-vdpau<1:24.2.7-1"
+    ],
+    "lib32-nvidia-utils": [
+      "lib32-nvidia-libgl"
+    ],
+    "libblockdev": [
+      "libblockdev-utils"
+    ],
+    "libblockdev-fs": [
+      "libblockdev-tools"
+    ],
+    "libcanberra": [
+      "libcanberra-pulse<0.30+2+gc0620e4-4"
+    ],
+    "libdrm": [
+      "libdrm-new",
+      "libdrm-nouveau"
+    ],
+    "libisl": [
+      "isl"
+    ],
+    "libpaper": [
+      "paper"
+    ],
+    "libsigc++": [
+      "libsigc++2.0"
+    ],
+    "libtool": [
+      "libltdl",
+      "libtool-multilib"
+    ],
+    "libunibreak": [
+      "liblinebreak"
+    ],
+    "libverto": [
+      "libverto-libevent<0.3.2-4"
+    ],
+    "libvpl": [
+      "onevpl"
+    ],
+    "linux": [
+      "virtualbox-guest-modules-arch",
+      "wireguard-arch"
+    ],
+    "linux-firmware-broadcom": [
+      "linux-firmware-bnx2x<=20250613.12fe085f-4"
+    ],
+    "localsearch": [
+      "tracker3-miners<=3.7.3-2"
+    ],
+    "luarocks": [
+      "luarocks5.1",
+      "luarocks5.2"
+    ],
+    "luit": [
+      "xorg-luit"
+    ],
+    "mailcap": [
+      "mime-types"
+    ],
+    "man-db": [
+      "man"
+    ],
+    "mariadb-libs": [
+      "libmariadbclient"
+    ],
+    "mbedtls": [
+      "polarssl"
+    ],
+    "mdadm": [
+      "raidtools"
+    ],
+    "mesa": [
+      "libva-mesa-driver<1:24.2.7-1",
+      "mesa-libgl<17.0.1-2",
+      "mesa-vdpau<1:24.2.7-1"
+    ],
+    "mise": [
+      "rtx"
+    ],
+    "mitmproxy": [
+      "pathod"
+    ],
+    "nautilus-python": [
+      "python-nautilus"
+    ],
+    "ncurses": [
+      "alacritty-terminfo",
+      "rio-terminfo",
+      "wezterm-terminfo"
+    ],
+    "ntfs-3g": [
+      "ntfsprogs"
+    ],
+    "nvidia-utils": [
+      "nvidia-libgl"
+    ],
+    "ocl-icd": [
+      "libcl"
+    ],
+    "onetbb": [
+      "intel-tbb",
+      "tbb"
+    ],
+    "openssl": [
+      "openssl-perl",
+      "openssl-doc"
+    ],
+    "pandoc-cli": [
+      "pandoc"
+    ],
+    "perl-net-ssleay": [
+      "net-ssleay"
+    ],
+    "perl-timedate": [
+      "timedate"
+    ],
+    "pkgconf": [
+      "pkg-config"
+    ],
+    "plocate": [
+      "mlocate"
+    ],
+    "procps-ng": [
+      "procps",
+      "sysvinit-tools"
+    ],
+    "protobuf": [
+      "protobuf-cpp"
+    ],
+    "python": [
+      "python3",
+      "python-externally-managed"
+    ],
+    "python-argon2-cffi": [
+      "python-argon2_cffi"
+    ],
+    "python-dbus": [
+      "dbus-python",
+      "python-dbus-common"
+    ],
+    "python-gobject": [
+      "pygobject-devel<=3.36.1-1"
+    ],
+    "python-jaraco.classes": [
+      "python-jaraco"
+    ],
+    "python-jaraco.collections": [
+      "python-jaraco"
+    ],
+    "python-jaraco.functools": [
+      "python-jaraco"
+    ],
+    "python-jaraco.text": [
+      "python-jaraco"
+    ],
+    "python-nest-asyncio": [
+      "python-nest_asyncio"
+    ],
+    "python-pyasn1": [
+      "pyasn1"
+    ],
+    "python-pycryptodome": [
+      "python-crypto"
+    ],
+    "python-pygments": [
+      "pygmentize"
+    ],
+    "python-pyxdg": [
+      "python-xdg<0.26-5"
+    ],
+    "python-service-identity": [
+      "python-service_identity"
+    ],
+    "python-setuptools": [
+      "python-distribute"
+    ],
+    "python-sphinxcontrib-jquery": [
+      "python-sphinxcontrib.jquery"
+    ],
+    "python-virtualenv": [
+      "virtualenv"
+    ],
+    "ruby": [
+      "ruby-benchmark",
+      "ruby-cgi",
+      "ruby-date",
+      "ruby-delegate",
+      "ruby-did_you_mean",
+      "ruby-digest",
+      "ruby-english",
+      "ruby-etc",
+      "ruby-fcntl",
+      "ruby-fiddle",
+      "ruby-fileutils",
+      "ruby-find",
+      "ruby-forwardable",
+      "ruby-io-console",
+      "ruby-io-nonblock",
+      "ruby-io-wait",
+      "ruby-ipaddr",
+      "ruby-json",
+      "ruby-logger",
+      "ruby-net-http",
+      "ruby-open-uri",
+      "ruby-prism",
+      "ruby-psych",
+      "ruby-reline",
+      "ruby-ruby2_keywords",
+      "ruby-set",
+      "ruby-stringio",
+      "ruby-time",
+      "ruby-tmpdir",
+      "ruby-uri"
+    ],
+    "rust": [
+      "cargo",
+      "cargo-tree",
+      "rust-docs<1:1.56.1-3",
+      "rustfmt"
+    ],
+    "sdl2-compat": [
+      "sdl2"
+    ],
+    "seatd": [
+      "libseat"
+    ],
+    "sqlite": [
+      "sqlite3"
+    ],
+    "systemd": [
+      "nss-myhostname",
+      "systemd-tools",
+      "udev"
+    ],
+    "systemd-libs": [
+      "libsystemd"
+    ],
+    "tinysparql": [
+      "tracker3<=3.7.3-2"
+    ],
+    "totem-pl-parser": [
+      "totem-plparser<=3.26.3-1"
+    ],
+    "ttf-jetbrains-mono-nerd": [
+      "nerd-fonts-jetbrains-mono"
+    ],
+    "util-linux": [
+      "rfkill",
+      "hardlink"
+    ],
+    "util-linux-libs": [
+      "libutil-linux"
+    ],
+    "v4l-utils": [
+      "libv4l"
+    ],
+    "wireless-regdb": [
+      "crda"
+    ],
+    "wireshark-qt": [
+      "wireshark",
+      "wireshark-gtk",
+      "wireshark-common"
+    ],
+    "woff2-font-awesome": [
+      "ttf-font-awesome"
+    ],
+    "wxwidgets-common": [
+      "wxgtk-common"
+    ],
+    "x264": [
+      "libx264",
+      "libx264-10bit",
+      "libx264-all"
+    ],
+    "xapp": [
+      "xapps"
+    ],
+    "xkeyboard-config": [
+      "xkbdata"
+    ],
+    "xorg-server": [
+      "glamor-egl",
+      "xf86-video-modesetting"
+    ],
+    "xorg-xwayland": [
+      "xorg-server-xwayland"
+    ],
+    "xournalpp": [
+      "xournal"
+    ],
+    "zbar": [
+      "zbar-gtk",
+      "zbar-qt",
+      "python-zbar"
+    ]
+  },
+  "incompatible_chains": [],
+  "statistics": {
+    "packages_with_conflicts": 144,
+    "circular_dependency_pairs": 5,
+    "virtual_packages_with_multiple_providers": 6,
+    "packages_that_replace_others": 110,
+    "incompatible_dependency_chains": 0
+  }
+}

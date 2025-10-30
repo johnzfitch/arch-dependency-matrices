@@ -1,0 +1,117 @@
+{
+  "matrix_properties": {
+    "dimensions": 1553,
+    "total_incompatibilities": 25,
+    "density": 2.0744684382073938e-05,
+    "mean_incompatibilities": 0.03219575016097875,
+    "max_incompatibilities": 2
+  },
+  "top_incompatible_packages": [
+    {
+      "package": "xorg-server",
+      "conflicts": 2
+    },
+    {
+      "package": "nvidia-utils",
+      "conflicts": 2
+    },
+    {
+      "package": "lib32-mesa",
+      "conflicts": 2
+    },
+    {
+      "package": "mesa",
+      "conflicts": 2
+    },
+    {
+      "package": "mkinitcpio",
+      "conflicts": 2
+    },
+    {
+      "package": "elephant-clipboard",
+      "conflicts": 1
+    },
+    {
+      "package": "elephant-desktopapplications",
+      "conflicts": 1
+    },
+    {
+      "package": "elephant-files",
+      "conflicts": 1
+    },
+    {
+      "package": "elephant-menus",
+      "conflicts": 1
+    },
+    {
+      "package": "elephant-providerlist",
+      "conflicts": 1
+    },
+    {
+      "package": "elephant-runner",
+      "conflicts": 1
+    },
+    {
+      "package": "libglvnd",
+      "conflicts": 1
+    },
+    {
+      "package": "elephant-symbols",
+      "conflicts": 1
+    },
+    {
+      "package": "elephant-todo",
+      "conflicts": 1
+    },
+    {
+      "package": "xdg-desktop-portal-gtk",
+      "conflicts": 1
+    },
+    {
+      "package": "elephant-calc",
+      "conflicts": 1
+    },
+    {
+      "package": "elephant-unicode",
+      "conflicts": 1
+    },
+    {
+      "package": "elephant-websearch",
+      "conflicts": 1
+    },
+    {
+      "package": "lib32-nvidia-utils",
+      "conflicts": 1
+    },
+    {
+      "package": "xf86-input-libinput",
+      "conflicts": 1
+    }
+  ],
+  "critical_conflicts": [
+    {
+      "package": "mesa",
+      "conflicts": 2,
+      "dependents": 14,
+      "impact_score": 28
+    },
+    {
+      "package": "libglvnd",
+      "conflicts": 1,
+      "dependents": 18,
+      "impact_score": 18
+    },
+    {
+      "package": "krb5",
+      "conflicts": 1,
+      "dependents": 15,
+      "impact_score": 15
+    }
+  ],
+  "conflict_types": {
+    "explicit": 7,
+    "virtual": 6,
+    "circular": 5
+  },
+  "packages_with_zero_conflicts": 1508
+}
