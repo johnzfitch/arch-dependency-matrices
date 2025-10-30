@@ -1,43 +1,43 @@
-# ![Matrix Icon](../iconics/raw/100.png) Arch Linux Dependency Matrix Analysis
+# ![Matrix Icon](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/100.png) Arch Linux Dependency Matrix Analysis
 
 > Mathematical analysis of package dependency structures using graph theory, spectral analysis, and linear algebra
 
-![Status](../iconics/raw/101.png) **Status:** Complete Analysis
-![Language](../iconics/raw/102.png) **Language:** Python 3.13
-![Packages](../iconics/raw/103.png) **Dataset:** 1,553 packages
-![Dependencies](../iconics/raw/104.png) **Dependencies Analyzed:** 6,307
+![Status](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/101.png) **Status:** Complete Analysis
+![Language](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/102.png) **Language:** Python 3.13
+![Packages](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/103.png) **Dataset:** 1,553 packages
+![Dependencies](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/104.png) **Dependencies Analyzed:** 6,307
 
 ---
 
-## ![Overview](../iconics/raw/1.png) Overview
+## ![Overview](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/1.png) Overview
 
 This repository contains a comprehensive mathematical analysis of package dependencies in an Arch Linux system with 1,553 installed packages. Using advanced techniques from graph theory, spectral analysis, and linear algebra, we construct and analyze an **n×n adjacency matrix** (where n=1553) to understand dependency structures, identify conflicts, and quantify package compatibility.
 
-### ![Key Findings](../iconics/raw/2.png) Key Findings
+### ![Key Findings](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/2.png) Key Findings
 
-![Graph](../iconics/raw/10.png) **Sparse Graph Structure**
+![Graph](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/10.png) **Sparse Graph Structure**
 - Density: 0.262% (6,307 edges out of 2.4M possible)
 - Average dependencies per package: 4.06
 - Maximum dependency depth: 16 levels
 
-![Hub](../iconics/raw/11.png) **Critical Hub Identified**
+![Hub](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/11.png) **Critical Hub Identified**
 - **glibc** PageRank: 0.0842 (8.42% of total importance)
 - 717 packages depend on glibc (46% of system)
 - Single point of failure in the dependency graph
 
-![Conflict](../iconics/raw/12.png) **Minimal Conflicts**
+![Conflict](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/12.png) **Minimal Conflicts**
 - Only 25 incompatibility edges (0.00002 density)
 - 97.1% of packages conflict-free
 - Incompatibilities 126× rarer than dependencies
 
-![Structure](../iconics/raw/13.png) **Near-Acyclic Structure**
+![Structure](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/13.png) **Near-Acyclic Structure**
 - Only 5 circular dependency pairs
 - Optimal for topological sorting O(n+m)
 - Simplifies installation and removal operations
 
 ---
 
-## ![Structure](../iconics/raw/20.png) Repository Structure
+## ![Structure](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/20.png) Repository Structure
 
 ```
 arch-dependency-matrices/
@@ -80,9 +80,9 @@ arch-dependency-matrices/
 
 ---
 
-## ![Mathematics](../iconics/raw/30.png) Mathematical Framework
+## ![Mathematics](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/30.png) Mathematical Framework
 
-### ![Matrix](../iconics/raw/31.png) Adjacency Matrix
+### ![Matrix](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/31.png) Adjacency Matrix
 
 We represent the dependency structure as a binary adjacency matrix **A ∈ {0,1}^(n×n)**:
 
@@ -97,7 +97,7 @@ A[i,j] = { 1  if package i depends on package j
 - Directed graph (not symmetric)
 - Storage: 18.8 MB dense, 49.3 KB sparse optimal
 
-### ![Laplacian](../iconics/raw/32.png) Graph Laplacian
+### ![Laplacian](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/32.png) Graph Laplacian
 
 The graph Laplacian reveals structural properties:
 
@@ -112,7 +112,7 @@ where **D** is the degree matrix: `D = diag(d₁, d₂, ..., dₙ)`
 - λₘₐₓ = 68.20
 - Spectral gap = 0 (disconnected components)
 
-### ![PageRank](../iconics/raw/33.png) PageRank Centrality
+### ![PageRank](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/33.png) PageRank Centrality
 
 Iterative algorithm measuring importance:
 
@@ -124,7 +124,7 @@ where α = 0.85 (damping factor), P = transition matrix
 
 **Converged in 16 iterations**
 
-### ![SVD](../iconics/raw/34.png) Singular Value Decomposition
+### ![SVD](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/34.png) Singular Value Decomposition
 
 Matrix factorization:
 
@@ -138,7 +138,7 @@ A = U Σ Vᵀ
 - Condition number: 4.4×10³⁰ (ill-conditioned)
 - First 2 components capture 53% of variance
 
-### ![Incompatibility](../iconics/raw/35.png) Incompatibility Matrix
+### ![Incompatibility](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/35.png) Incompatibility Matrix
 
 Binary matrix for conflicts:
 
@@ -154,9 +154,9 @@ I[i,j] = { 1  if package i conflicts with package j
 
 ---
 
-## ![Results](../iconics/raw/40.png) Analysis Results
+## ![Results](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/40.png) Analysis Results
 
-### ![Metrics](../iconics/raw/41.png) Core Metrics
+### ![Metrics](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/41.png) Core Metrics
 
 | Metric | Value | Interpretation |
 |--------|-------|----------------|
@@ -167,7 +167,7 @@ I[i,j] = { 1  if package i conflicts with package j
 | **Max Degree** | 68 | gst-plugins-bad |
 | **Isolated Packages** | 100 | No dependencies |
 
-### ![Top Packages](../iconics/raw/42.png) Top 10 by PageRank
+### ![Top Packages](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/42.png) Top 10 by PageRank
 
 | Rank | Package | PageRank | Significance |
 |------|---------|----------|--------------|
@@ -182,19 +182,19 @@ I[i,j] = { 1  if package i conflicts with package j
 | 9 | zlib | 0.0059 | Compression library |
 | 10 | libffi | 0.0057 | Foreign function interface |
 
-### ![Conflicts](../iconics/raw/43.png) Conflict Analysis
+### ![Conflicts](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/43.png) Conflict Analysis
 
 **Three Types of Incompatibilities:**
 
-1. ![Explicit](../iconics/raw/44.png) **Explicit Conflicts** (7 pairs)
+1. ![Explicit](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/44.png) **Explicit Conflicts** (7 pairs)
    - Declared in package metadata
    - Example: `nvidia-utils ⇄ mesa-libgl`
 
-2. ![Circular](../iconics/raw/45.png) **Circular Dependencies** (5 pairs)
+2. ![Circular](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/45.png) **Circular Dependencies** (5 pairs)
    - Mutual dependencies (A→B and B→A)
    - Example: `libglvnd ⇄ mesa`
 
-3. ![Virtual](../iconics/raw/46.png) **Virtual Package Conflicts** (6 pairs)
+3. ![Virtual](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/46.png) **Virtual Package Conflicts** (6 pairs)
    - Multiple providers of same capability
    - Example: `opengl-driver`: {mesa, nvidia-utils}
 
@@ -205,9 +205,9 @@ I[i,j] = { 1  if package i conflicts with package j
 
 ---
 
-## ![Quick Start](../iconics/raw/50.png) Quick Start
+## ![Quick Start](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/50.png) Quick Start
 
-### ![Prerequisites](../iconics/raw/51.png) Prerequisites
+### ![Prerequisites](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/51.png) Prerequisites
 
 ```bash
 # Arch Linux system
@@ -215,7 +215,7 @@ I[i,j] = { 1  if package i conflicts with package j
 sudo pacman -S python python-numpy python-scipy
 ```
 
-### ![Run Analysis](../iconics/raw/52.png) Run Analysis
+### ![Run Analysis](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/52.png) Run Analysis
 
 ```bash
 # 1. Collect dependency data (15-20 min)
@@ -233,7 +233,7 @@ python conflict_analysis.py
 python incompatibility_matrix_analysis.py
 ```
 
-### ![View Results](../iconics/raw/53.png) View Results
+### ![View Results](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/53.png) View Results
 
 ```bash
 # View analysis summary
@@ -248,9 +248,9 @@ cd papers && pdflatex dependency_research_paper.tex
 
 ---
 
-## ![Technical Details](../iconics/raw/60.png) Technical Details
+## ![Technical Details](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/60.png) Technical Details
 
-### ![Algorithms](../iconics/raw/61.png) Algorithms Used
+### ![Algorithms](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/61.png) Algorithms Used
 
 1. **Tarjan's Algorithm** - Strongly connected components O(n+m)
 2. **PageRank** - Power iteration O(n²×k) where k=16 iterations
@@ -258,7 +258,7 @@ cd papers && pdflatex dependency_research_paper.tex
 4. **LAPACK** - Eigenvalue decomposition O(n³)
 5. **SVD** - Singular value decomposition O(n³)
 
-### ![Complexity](../iconics/raw/62.png) Computational Complexity
+### ![Complexity](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/62.png) Computational Complexity
 
 | Operation | Complexity | Time (1553×1553) |
 |-----------|------------|------------------|
@@ -274,7 +274,7 @@ cd papers && pdflatex dependency_research_paper.tex
 
 **Total runtime:** ~20 minutes on modern hardware
 
-### ![Stack](../iconics/raw/63.png) Technology Stack
+### ![Stack](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/63.png) Technology Stack
 
 - **Language:** Python 3.13
 - **Linear Algebra:** NumPy 2.3.4, SciPy 1.15
@@ -284,7 +284,7 @@ cd papers && pdflatex dependency_research_paper.tex
 
 ---
 
-## ![Research Paper](../iconics/raw/70.png) Research Paper
+## ![Research Paper](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/70.png) Research Paper
 
 The full mathematical analysis is documented in our 8-page research paper:
 
@@ -292,7 +292,7 @@ The full mathematical analysis is documented in our 8-page research paper:
 
 **Abstract:** We present a comprehensive mathematical analysis of package dependency structures using graph theory, spectral analysis, and linear algebra on a real-world dataset of 1,553 packages. Our findings reveal a sparse, nearly acyclic, scale-free network dominated by critical hubs with high overall compatibility.
 
-![Download](../iconics/raw/71.png) **[Download PDF](papers/dependency_research_paper.pdf)** (221 KB)
+![Download](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/71.png) **[Download PDF](papers/dependency_research_paper.pdf)** (221 KB)
 
 **Contents:**
 1. Introduction & Mathematical Framework
@@ -310,9 +310,9 @@ The full mathematical analysis is documented in our 8-page research paper:
 
 ---
 
-## ![Key Findings](../iconics/raw/80.png) Key Findings
+## ![Key Findings](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/80.png) Key Findings
 
-### ![Positive](../iconics/raw/81.png) Strengths
+### ![Positive](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/81.png) Strengths
 
 ✅ **Sparse Structure** - Only 0.26% density enables efficient algorithms
 ✅ **Near-Acyclic** - Only 5 circular dependencies out of 1,553 packages
@@ -320,14 +320,14 @@ The full mathematical analysis is documented in our 8-page research paper:
 ✅ **Shallow Dependencies** - Average depth 5.3, max 16 levels
 ✅ **Minimal Conflicts** - 126× fewer conflicts than dependencies
 
-### ![Concerns](../iconics/raw/82.png) Potential Issues
+### ![Concerns](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/82.png) Potential Issues
 
 ⚠️ **Single Point of Failure** - glibc dominates with 8.4% PageRank
 ⚠️ **Critical Hub** - 717 packages (46%) depend on glibc
 ⚠️ **Circular Dependencies** - 5 cycles complicate atomic operations
 ⚠️ **Graphics Conflicts** - mesa vs nvidia-utils (impact score: 28)
 
-### ![Recommendations](../iconics/raw/83.png) Recommendations
+### ![Recommendations](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/83.png) Recommendations
 
 1. **Monitor Critical Packages** - Watch glibc, gcc-libs, python
 2. **Handle Circles Carefully** - Update circular pairs atomically
@@ -336,18 +336,18 @@ The full mathematical analysis is documented in our 8-page research paper:
 
 ---
 
-## ![Contributing](../iconics/raw/90.png) Contributing
+## ![Contributing](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/90.png) Contributing
 
 This is a research project analyzing a specific system snapshot. To adapt for your system:
 
-1. ![Fork](../iconics/raw/91.png) Fork the repository
-2. ![Modify](../iconics/raw/92.png) Modify `src/collection/dependency_analysis.py` for your package manager
-3. ![Run](../iconics/raw/93.png) Run the analysis pipeline
-4. ![Submit](../iconics/raw/94.png) Submit findings via pull request
+1. ![Fork](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/91.png) Fork the repository
+2. ![Modify](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/92.png) Modify `src/collection/dependency_analysis.py` for your package manager
+3. ![Run](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/93.png) Run the analysis pipeline
+4. ![Submit](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/94.png) Submit findings via pull request
 
 ---
 
-## ![Citation](../iconics/raw/95.png) Citation
+## ![Citation](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/95.png) Citation
 
 If you use this work in your research, please cite:
 
@@ -363,13 +363,13 @@ If you use this work in your research, please cite:
 
 ---
 
-## ![License](../iconics/raw/96.png) License
+## ![License](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/96.png) License
 
 MIT License - See LICENSE file for details
 
 ---
 
-## ![Contact](../iconics/raw/97.png) Contact
+## ![Contact](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/97.png) Contact
 
 **Author:** Mathematical Analysis System
 **GitHub:** [@johnzfitch](https://github.com/johnzfitch)
@@ -378,21 +378,21 @@ MIT License - See LICENSE file for details
 
 ---
 
-## ![Statistics](../iconics/raw/98.png) Repository Statistics
+## ![Statistics](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/98.png) Repository Statistics
 
-![Lines of Code](../iconics/raw/99.png) **Lines of Code:** ~2,000 Python
-![Documentation](../iconics/raw/100.png) **Documentation:** ~15,000 words
-![Data Size](../iconics/raw/101.png) **Data Size:** 18.8 MB matrices
-![Analysis Time](../iconics/raw/102.png) **Analysis Time:** 20 minutes total
+![Lines of Code](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/99.png) **Lines of Code:** ~2,000 Python
+![Documentation](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/100.png) **Documentation:** ~15,000 words
+![Data Size](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/101.png) **Data Size:** 18.8 MB matrices
+![Analysis Time](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/102.png) **Analysis Time:** 20 minutes total
 
 ---
 
 <div align="center">
 
-![Mathematics](../iconics/raw/103.png) **Mathematics** | ![Analysis](../iconics/raw/104.png) **Analysis** | ![Research](../iconics/raw/105.png) **Research**
+![Mathematics](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/103.png) **Mathematics** | ![Analysis](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/104.png) **Analysis** | ![Research](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/105.png) **Research**
 
 *Rigorous mathematical analysis of software dependency structures*
 
-![Build Status](../iconics/raw/106.png) Complete | ![Tests](../iconics/raw/107.png) Verified | ![Documentation](../iconics/raw/108.png) Comprehensive
+![Build Status](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/106.png) Complete | ![Tests](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/107.png) Verified | ![Documentation](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/108.png) Comprehensive
 
 </div>

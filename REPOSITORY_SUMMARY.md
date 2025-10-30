@@ -1,12 +1,12 @@
 # Repository Summary
 
-## ![Complete](../iconics/raw/100.png) arch-dependency-matrices
+## ![Complete](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/100.png) arch-dependency-matrices
 
 **Professional mathematical research repository analyzing 1,553 Arch Linux package dependencies**
 
 ---
 
-## ![Status](../iconics/raw/101.png) Repository Status
+## ![Status](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/101.png) Repository Status
 
 ✅ **Fully initialized with professional structure**
 ✅ **9 semantic commits with detailed messages**
@@ -18,7 +18,7 @@
 
 ---
 
-## ![Structure](../iconics/raw/102.png) Repository Structure
+## ![Structure](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/102.png) Repository Structure
 
 ```
 arch-dependency-matrices/
@@ -49,7 +49,7 @@ arch-dependency-matrices/
 
 ---
 
-## ![Commits](../iconics/raw/103.png) Git Commit History
+## ![Commits](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/103.png) Git Commit History
 
 **9 Professional Commits:**
 
@@ -72,9 +72,9 @@ arch-dependency-matrices/
 
 ---
 
-## ![Features](../iconics/raw/104.png) Key Features
+## ![Features](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/104.png) Key Features
 
-### ![Analysis](../iconics/raw/105.png) Mathematical Analysis
+### ![Analysis](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/105.png) Mathematical Analysis
 - 1553×1553 adjacency matrix construction
 - Graph Laplacian eigendecomposition
 - PageRank centrality (converged in 16 iterations)
@@ -83,14 +83,14 @@ arch-dependency-matrices/
 - Clustering coefficients
 - Strongly connected components (Tarjan's algorithm)
 
-### ![Conflicts](../iconics/raw/106.png) Conflict Detection
+### ![Conflicts](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/106.png) Conflict Detection
 - Explicit conflict scanning (144 packages)
 - Circular dependency detection (5 pairs)
 - Virtual package analysis (6 virtual packages)
 - Incompatibility matrix I ∈ {0,1}^(1553×1553)
 - Impact score calculation
 
-### ![Documentation](../iconics/raw/107.png) Documentation
+### ![Documentation](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/107.png) Documentation
 - 8-page LaTeX research paper
 - Comprehensive README (14 KB)
 - Methodology documentation (raw calculations)
@@ -99,7 +99,7 @@ arch-dependency-matrices/
 
 ---
 
-## ![Results](../iconics/raw/108.png) Analysis Results
+## ![Results](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/108.png) Analysis Results
 
 ### Core Metrics
 - **Packages:** 1,553
@@ -117,7 +117,7 @@ arch-dependency-matrices/
 
 ---
 
-## ![Next Steps](../iconics/raw/109.png) Next Steps
+## ![Next Steps](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/109.png) Next Steps
 
 ### To Push to GitHub:
 
@@ -141,7 +141,7 @@ git push -u origin master
 
 ---
 
-## ![Statistics](../iconics/raw/110.png) Repository Statistics
+## ![Statistics](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/110.png) Repository Statistics
 
 - **Lines of Code:** ~2,500 (Python)
 - **Documentation:** ~15,000 words
@@ -153,7 +153,7 @@ git push -u origin master
 
 ---
 
-## ![Quality](../iconics/raw/111.png) Quality Metrics
+## ![Quality](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/111.png) Quality Metrics
 
 ✅ **Code Quality**
 - PEP 8 compliant
@@ -181,7 +181,7 @@ git push -u origin master
 
 ---
 
-## ![Impact](../iconics/raw/112.png) Project Impact
+## ![Impact](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/112.png) Project Impact
 
 ### Academic
 - Novel mathematical framework for dependency analysis
@@ -203,13 +203,13 @@ git push -u origin master
 
 ---
 
-## ![License](../iconics/raw/113.png) License
+## ![License](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/113.png) License
 
 **MIT License** - Free for academic, commercial, and personal use
 
 ---
 
-## ![Success](../iconics/raw/114.png) Repository Complete!
+## ![Success](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/114.png) Repository Complete!
 
 The `arch-dependency-matrices` repository is now:
 - ✅ Professionally structured
