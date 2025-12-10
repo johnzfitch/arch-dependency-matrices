@@ -286,11 +286,11 @@ cd papers && pdflatex dependency_research_paper.tex
 
 ## ![Research Paper](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/70.png) Research Paper
 
-The full mathematical analysis is documented in our 8-page research paper:
+The full mathematical analysis is documented in the whitepaper:
 
 **Title:** *Mathematical Analysis of Package Dependency Structures: A Graph-Theoretic and Spectral Approach to Assessing Compatibility in High-Dimensional Systems*
 
-**Abstract:** We present a comprehensive mathematical analysis of package dependency structures using graph theory, spectral analysis, and linear algebra on a real-world dataset of 1,553 packages. Our findings reveal a sparse, nearly acyclic, scale-free network dominated by critical hubs with high overall compatibility.
+**Abstract:** A comprehensive mathematical analysis of package dependency structures using graph theory, spectral analysis, and linear algebra on a real-world dataset of 1,553 packages.The results reveal a sparse, nearly acyclic, scale-free network dominated by critical hubs with high overall compatibility.
 
 ![Download](https://raw.githubusercontent.com/johnzfitch/iconics/master/raw/71.png) **[Download PDF](papers/dependency_research_paper.pdf)** (221 KB)
 
