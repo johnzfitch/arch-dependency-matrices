@@ -1,0 +1,219 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{array}
+\geometry{margin=1in}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\argmin}{arg\,min}
+
+\title{A Formal Hybrid Metric for Unicode Security Diff Analysis:\\
+64-Dimensional Interpretable Features with Binary Sketching}
+\author{Mathematical Design Note for VectorHit-Style Analysis}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a formal mathematical framework for Unicode security analysis that combines interpretable real-valued features with binary locality-sensitive sketches. Given an original text and its sanitized counterpart, we construct a 64-dimensional feature map encoding lexical, structural, and security-relevant phenomena, together with edit-geometry statistics. We then define a composite distance
+\[
+d = \alpha \frac{d_H}{64} + \beta \lVert W\Delta x \rVert_1,
+\]
+where $d_H$ is Hamming distance on a 64-bit sketch, $\Delta x = x_u - x_v$ is the difference between feature vectors, and $W$ is a positive diagonal weighting matrix. We prove metric properties under mild conditions, derive perturbation stability bounds, and state retrieval complexity guarantees for a two-stage candidate filtering pipeline. Finally, we give a calibrated risk model that combines distance with novelty via Mahalanobis geometry and supports tiered decision boundaries for operational security triage.
+\end{abstract}
+
+\section{Introduction}
+Unicode-driven attacks exploit text rendering asymmetries, confusables, and invisible control characters to induce semantic mismatch between human and machine interpretations. Practical sanitizers can remove many threats, but production systems also require \emph{explainability}: what changed, where it changed, and how severe the change is.
+
+This paper formalizes a next-level representation for such systems:
+\begin{enumerate}
+    \item a 64-dimensional interpretable feature vector for each analyzed text pair;
+    \item a 64-bit sketch for fast approximate neighbor search;
+    \item a composite distance that is both operationally efficient and mathematically tractable.
+\end{enumerate}
+
+\section{Problem Setup}
+\subsection{Objects}
+Let $\Sigma^\star$ denote the set of finite UTF-8 strings. For a mode parameter $m \in \mathcal{M}$, let
+\[
+\mathcal{C}_m : \Sigma^\star \to \Sigma^\star
+\]
+be a deterministic sanitizer. For input $s \in \Sigma^\star$, define $\hat{s} = \mathcal{C}_m(s)$.
+
+Each analyzed sample is the pair
+\[
+u = (s,\hat{s}).
+\]
+
+\subsection{Tokenization and Alignment}
+Let $\tau$ be a hybrid tokenizer that emits units from multiple granularities: line runs, lexical tokens, grapheme clusters, and security atoms (e.g., BiDi controls, default ignorables, TAG code points, private-use symbols). Let $\mathcal{A}(u)$ be an alignment relation between token sequences of $s$ and $\hat{s}$, with insert, delete, and equal spans. The set $\mathcal{M}$ denotes all available sanitizer modes (e.g., aggressive removal, character confusable mapping, normalization strategies), and each mode $m \in \mathcal{M}$ defines a distinct sanitizer function $\mathcal{C}_m$.
+
+\section{A 64-Dimensional Interpretable Feature Map}
+\begin{definition}[Feature map]
+Define
+\[
+\phi : \mathcal{U} \to \mathbb{R}^{64}, \qquad x = \phi(u),
+\]
+where $\mathcal{U}$ is the space of valid pairs $(s,\hat{s})$.
+\end{definition}
+
+The coordinates are partitioned as follows:
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.15\linewidth} >{\raggedright\arraybackslash}p{0.18\linewidth} >{\raggedright\arraybackslash}p{0.59\linewidth}}
+\toprule
+\textbf{Block} & \textbf{Dimensions} & \textbf{Semantics} \\
+\midrule
+Lexical & 1--12 & Token length moments, punctuation density, script diversity, normalization ratios \\
+Structural & 13--24 & Clause/run segmentation, list-pattern transitions, local syntax-shape counts \\
+Security vectors & 25--40 & BiDi controls, default ignorables, TAG chars, noncharacters, PUA, confusables, mixed scripts \\
+Edit geometry & 41--52 & Insert/delete run counts, span lengths, locality entropy, replacement asymmetry \\
+Context and mode & 53--64 & Mode flags, confidence modifiers, stability priors, language/script priors \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All coordinates are normalized to $[0,1]$ or z-scored relative to a reference corpus.
+
+\section{Binary Sketching for Fast Retrieval}
+Let $R \in \mathbb{R}^{64 \times 64}$ have i.i.d. rows with isotropic distribution (e.g., Gaussian). Define a bit sketch $b \in \{0,1\}^{64}$ by
+\[
+b_i = \mathbf{1}\!\left[(Rx)_i \ge 0\right], \quad i=1,\dots,64.
+\]
+This is a random-hyperplane sketch (SimHash family).
+
+\begin{proposition}[Angular relation of random hyperplanes]
+Let $x,y \in \mathbb{R}^{64}$ be nonzero and let $\theta = \angle(x,y) \in [0,\pi]$. For one random hyperplane bit,
+\[
+\mathbb{P}[b_i(x) \ne b_i(y)] = \frac{\theta}{\pi}.
+\]
+Hence
+\[
+\mathbb{E}\!\left[\frac{1}{64}d_H(b(x),b(y))\right] = \frac{\theta}{\pi}.
+\]
+\end{proposition}
+
+\section{Composite Distance}
+\begin{definition}[Hybrid distance]
+For samples $u,v$ with feature vectors $x_u,x_v \in \mathbb{R}^{64}$ and sketches $b_u,b_v \in \{0,1\}^{64}$, define
+\[
+d(u,v) = \alpha \frac{1}{64} d_H(b_u,b_v) + \beta \lVert W(x_u - x_v)\rVert_1,
+\]
+where $\alpha,\beta > 0$ and $W=\diag(w_1,\dots,w_{64})$ with $w_i>0$.
+\end{definition}
+
+\begin{theorem}[Metric property]
+The function $d$ above is a metric on the sample space quotient induced by $(x,b)$, and a strict metric on any domain where $u \mapsto (x_u,b_u)$ is injective.
+\end{theorem}
+
+\begin{proof}
+Nonnegativity is immediate since both summands are nonnegative. Symmetry follows from symmetry of $d_H$ and $\lVert\cdot\rVert_1$.
+
+Triangle inequality:
+\[
+\frac{1}{64}d_H(b_u,b_w) \le \frac{1}{64}d_H(b_u,b_v) + \frac{1}{64}d_H(b_v,b_w),
+\]
+and
+\[
+\lVert W(x_u-x_w)\rVert_1 \le \lVert W(x_u-x_v)\rVert_1 + \lVert W(x_v-x_w)\rVert_1.
+\]
+Multiply by positive constants $\alpha,\beta$ and add.
+
+Identity of indiscernibles holds at representation level:
+\[
+d(u,v)=0 \iff b_u=b_v \text{ and } x_u=x_v.
+\]
+Thus $d$ is a metric on representation classes, and strict where representation is injective.
+\end{proof}
+
+\section{Perturbation Stability}
+Let $u'$ be obtained from $u$ by a bounded perturbation affecting at most $k$ feature coordinates by magnitude at most $\varepsilon$ each, and flipping at most $r$ sketch bits.
+
+\begin{theorem}[Distance drift bound]
+For any reference sample $v$,
+\[
+|d(u',v)-d(u,v)| \le \alpha \frac{r}{64} + \beta\, w_{\max}\,k\varepsilon,
+\]
+where $w_{\max} = \max_i w_i$.
+\end{theorem}
+
+\begin{proof}
+For the Hamming term,
+\[
+\left|\frac{1}{64}d_H(b_{u'},b_v)-\frac{1}{64}d_H(b_u,b_v)\right| \le \frac{1}{64}d_H(b_{u'},b_u) \le \frac{r}{64}.
+\]
+For the weighted $L_1$ term, let $\delta=x_{u'}-x_u$. Then
+\[
+\left|\lVert W(x_{u'}-x_v)\rVert_1 - \lVert W(x_u-x_v)\rVert_1\right|
+\le \lVert W\delta\rVert_1.
+\]
+By support and magnitude bounds, $\lVert W\delta\rVert_1 \le w_{\max}k\varepsilon$. Multiply by coefficients and add.
+\end{proof}
+
+\section{Risk Calibration with Novelty}
+Define a novelty statistic against a baseline distribution $(\mu,\Sigma)$:
+\[
+M(x)=\sqrt{(x-\mu)^\top \Sigma^{-1}(x-\mu)}.
+\]
+Use calibrated logistic scoring:
+\[
+p(\text{attack}\mid u)=\sigma\!\big(\eta_0-\eta_1\,d(u,u_\mathrm{ref})+\eta_2\,M(x_u)\big),
+\]
+with $\eta_1>0$ and $\sigma(z)=1/(1+e^{-z})$.
+
+Tiered decisions are obtained from thresholds $0<t_1<t_2<1$:
+\[
+\text{label}(u)=
+\begin{cases}
+\texttt{info}, & p < t_1,\\
+\texttt{warn}, & t_1 \le p < t_2,\\
+\texttt{block}, & p \ge t_2.
+\end{cases}
+\]
+
+\section{Two-Stage Retrieval and Complexity}
+Given a corpus of $N$ samples:
+\begin{enumerate}
+    \item Stage 1: retrieve candidate set $\mathcal{C}$ via sketch similarity (e.g., Hamming radius or multi-index buckets).
+    \item Stage 2: rerank candidates by exact weighted $L_1$ (or full $d$).
+\end{enumerate}
+
+\begin{proposition}[Complexity profile]
+Let $|\mathcal{C}|=K$. With precomputed features and sketches, query cost is
+\[
+T_\text{query}=T_\text{index}(N)+\mathcal{O}(64K),
+\]
+where $T_\text{index}(N)$ depends on the sketch index structure and is sublinear in typical LSH regimes.
+\end{proposition}
+
+Since dimension is fixed at 64, the reranking term is effectively linear in candidate count.
+
+\section{Design Implications}
+The representation supports three simultaneous goals:
+\begin{enumerate}
+    \item \textbf{Explainability}: coordinates correspond to explicit security and edit phenomena.
+    \item \textbf{Speed}: 64-bit sketches provide compact filtering keys.
+    \item \textbf{Rigor}: distance behavior is mathematically bounded and calibratable.
+\end{enumerate}
+
+This architecture justifies an algorithm-first deployment strategy: finish deterministic Unicode and confusable features first, then optionally learn weights $(w_i,\eta_i)$ from labeled user data.
+
+\section{Conclusion}
+We formalized a 64-dimensional hybrid metric for Unicode security diff analysis with explicit proofs of metric validity and perturbation robustness. The framework unifies interpretable feature engineering, random-hyperplane sketching, and probabilistic calibration in a single mathematically coherent pipeline suitable for production systems that need both throughput and forensic-grade explanations.
+
+\begin{thebibliography}{9}
+\bibitem{unicode39}
+Unicode Consortium, \emph{Unicode Technical Standard \#39: Unicode Security Mechanisms}, Version 15.1, 2023-09-12. Available at \url{https://www.unicode.org/reports/tr39/}.
+\end{thebibliography}
+
+\end{document}
