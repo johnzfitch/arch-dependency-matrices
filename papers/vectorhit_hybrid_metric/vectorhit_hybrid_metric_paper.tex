@@ -30,7 +30,7 @@ We present a formal mathematical framework for Unicode security analysis that co
 \[
 d = \alpha \frac{d_H}{64} + \beta \lVert W\Delta x \rVert_1,
 \]
-where $d_H$ is Hamming distance on a 64-bit sketch and $W$ is a positive diagonal weighting matrix. We prove metric properties under mild conditions, derive perturbation stability bounds, and state retrieval complexity guarantees for a two-stage candidate filtering pipeline. Finally, we give a calibrated risk model that combines distance with novelty via Mahalanobis geometry and supports tiered decision boundaries for operational security triage.
+where $d_H$ is Hamming distance on a 64-bit sketch, $\Delta x = x_u - x_v$ is the difference between feature vectors, and $W$ is a positive diagonal weighting matrix. We prove metric properties under mild conditions, derive perturbation stability bounds, and state retrieval complexity guarantees for a two-stage candidate filtering pipeline. Finally, we give a calibrated risk model that combines distance with novelty via Mahalanobis geometry and supports tiered decision boundaries for operational security triage.
 \end{abstract}
 
 \section{Introduction}
@@ -57,7 +57,7 @@ u = (s,\hat{s}).
 \]
 
 \subsection{Tokenization and Alignment}
-Let $\tau$ be a hybrid tokenizer that emits units from multiple granularities: line runs, lexical tokens, grapheme clusters, and security atoms (e.g., BiDi controls, default ignorables, TAG code points, private-use symbols). Let $\mathcal{A}(u)$ be an alignment relation between token sequences of $s$ and $\hat{s}$, with insert, delete, and equal spans.
+Let $\tau$ be a hybrid tokenizer that emits units from multiple granularities: line runs, lexical tokens, grapheme clusters, and security atoms (e.g., BiDi controls, default ignorables, TAG code points, private-use symbols). Let $\mathcal{A}(u)$ be an alignment relation between token sequences of $s$ and $\hat{s}$, with insert, delete, and equal spans. The set $\mathcal{M}$ denotes all available sanitizer modes (e.g., aggressive removal, character confusable mapping, normalization strategies), and each mode $m \in \mathcal{M}$ defines a distinct sanitizer function $\mathcal{C}_m$.
 
 \section{A 64-Dimensional Interpretable Feature Map}
 \begin{definition}[Feature map]
@@ -212,17 +212,8 @@ This architecture justifies an algorithm-first deployment strategy: finish deter
 We formalized a 64-dimensional hybrid metric for Unicode security diff analysis with explicit proofs of metric validity and perturbation robustness. The framework unifies interpretable feature engineering, random-hyperplane sketching, and probabilistic calibration in a single mathematically coherent pipeline suitable for production systems that need both throughput and forensic-grade explanations.
 
 \begin{thebibliography}{9}
-\bibitem{charikar2002}
-M. Charikar, \emph{Similarity Estimation Techniques from Rounding Algorithms}, Proceedings of STOC, 2002.
-
-\bibitem{levenshtein1966}
-V. I. Levenshtein, \emph{Binary Codes Capable of Correcting Deletions, Insertions, and Reversals}, Soviet Physics Doklady, 1966.
-
-\bibitem{myers1986}
-E. W. Myers, \emph{An O(ND) Difference Algorithm and Its Variations}, Algorithmica, 1986.
-
 \bibitem{unicode39}
-Unicode Consortium, \emph{Unicode Technical Standard \#39: Unicode Security Mechanisms}, latest revision.
+Unicode Consortium, \emph{Unicode Technical Standard \#39: Unicode Security Mechanisms}, Version 15.1, 2023-09-12. Available at \url{https://www.unicode.org/reports/tr39/}.
 \end{thebibliography}
 
 \end{document}
